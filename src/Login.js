@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+
+/*const handleSubmit = () => {
+	// ... get data form
+	// ... submit to API or something
+};*/
 function Login() {
 	const history = useHistory();
+	const [data, setdata] = useState();
 	const [input, setInput] = useState({
 		username: '',
 		password: '',
 	});
-
-	const Send = () => {
-		//	preventDefault();
-		let users = JSON.parse(localStorage.getItem('users') || '[]');
-		let newuser = {
-			username: input.username,
-			password: input.password,
-		};
-		users.push(newuser);
-		localStorage.setItem('users', JSON.stringify(newuser));
+	const postData = async () => {
+		let { data } = await axios.post('http://localhost:5000/user/login', { access_token: input });
+		setdata(data);
 	};
+
 	return (
 		<>
 			<h2> Marhba </h2>
-			<form onSubmit={Send}>
+			<form onSubmit={(e) => e.prevent.default}>
 				<div className="imgcontainer">
 					<img src="img_avatar2.png" alt="Avatar" className="avatar" />
 				</div>
@@ -51,7 +52,7 @@ function Login() {
 						value={input.password}
 					/>
 
-					<button type="submit" onClick={() => history.push('/user')}>
+					<button type="submit" onClick={() => postData()}>
 						Login
 					</button>
 				</div>

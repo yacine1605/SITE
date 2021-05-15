@@ -1,5 +1,5 @@
 import './App.css';
-import Table from './Table';
+import Table from './table2';
 import Login from './Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 

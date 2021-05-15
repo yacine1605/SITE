@@ -1,86 +1,33 @@
 import axios from 'axios';
+import { useState } from 'react';
+const FormData = require('form-data');
+const fs = require('fs');
+
+const handleSubmit = () => {};
 
 const Table = () => {
-	/*const [input, //setInput] = useState({
+	let formData = new FormData();
+	formData.append('tg-0pky', 'formElme');
+	const [data, setdata] = useState();
+	const [input, setInput] = useState({
 		name1: '',
-		name2: '',
-		name3: '',
-		name4: '',
-		name5: '',
-		name6: '',
-		name7: '',
-		name8: '',
-		name9: '',
-		name10: '',
-		name11: '',
-		name12: '',
-		name13: '',
-		name14: '',
-		name15: '',
-		name16: '',
-		name17: '',
-		name18: '',
-		name19: '',
-		name20: '',
-		name21: '',
-		name22: '',
-		name23: '',
-		name24: '',
-		name25: '',
-		name26: '',
-		name27: '',
-		name28: '',
-		name29: '',
-		name30: '',
-		name31: '',
-		name32: '',
-		name33: '',
-		name34: '',
-		name35: '',
-		name36: '',
-		name37: '',
-		name38: '',
-		name39: '',
-		name40: '',
-		name41: '',
-		name42: '',
-		name43: '',
-		name44: '',
-		name45: '',
-		name46: '',
-		name47: '',
-		name48: '',
-		name49: '',
-		name50: '',
-		name51: '',
-		name52: '',
-		name53: '',
-		name54: '',
-		name55: '',
-		name56: '',
-		name57: '',
-		name58: '',
-		name59: '',
-		name60: '',
-		name61: '',
-		name62: '',
-		name63: '',
-		name64: '',
-		name65: '',
-		name66: '',
-		name67: '',
-		name68: '',
-		name69: '',
-		name70: '',
-		name71: '',
-	});*/
+	});
 
+	const postData = async () => {
+		let { data } = await axios.post('http://localhost:5000/prix');
+		setdata(data);
+	};
 	return (
 		<div>
 			<button> log out</button>
-			<h5 style={{ marginLeft: '5%', paddingBottom: '1%' }}> DPRH :{} </h5>
-			<h5 style={{ marginLeft: '5%', paddingBottom: '2%' }}> Port :{} </h5>
-			<form onSubmit={(e) => {}}>
+			<h5 style={{ marginLeft: '5%', paddingBottom: '1%' }}> DPRH </h5>
+			<h5 style={{ marginLeft: '5%', paddingBottom: '2%' }}> Port </h5>
+			<form
+				id="formElme"
+				onSubmit={(formElme) => {
+					formElme.preventDefault();
+				}}
+			>
 				<table className="tg">
 					<thead>
 						<tr>
@@ -116,16 +63,7 @@ const Table = () => {
 						<tr>
 							<td className="tg-0pky">Allache</td>
 							<td className="tg-73oq">
-								<input
-									name="name1"
-									//value={input.name1}
-									placeholder="enter a number"
-									/*onChange={(e) => {
-										console.log(array);
-									
-										setArray({ ...array, [e.currentTarget.name1]: e.target.//value });
-									}}*/
-								/>
+								<input name="name1" placeholder="enter a number" />
 							</td>
 							<td className="tg-f8tv">
 								<input
@@ -283,36 +221,36 @@ const Table = () => {
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name17}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name18}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name19}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name20}
 								/>
 							</td>
@@ -322,62 +260,62 @@ const Table = () => {
 							<td className="tg-73oq">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name21}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name22}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name23}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name24}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name25}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name26}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name27}
 								/>
@@ -388,26 +326,26 @@ const Table = () => {
 							<td className="tg-73oq">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name28}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name29}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name30}
 								/>
@@ -415,17 +353,17 @@ const Table = () => {
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name31}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									//value={input.name32}
 									placeholder="enter a number"
 								/>
@@ -433,18 +371,18 @@ const Table = () => {
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name33}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name34}
 								/>
 							</td>
@@ -453,63 +391,63 @@ const Table = () => {
 							<td className="tg-0pky">Pageot</td>
 							<td className="tg-73oq">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name35}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name36}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name37}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name38}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name39}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name40}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name41}
 								/>
@@ -519,63 +457,63 @@ const Table = () => {
 							<td className="tg-0pky">merlan</td>
 							<td className="tg-73oq">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name42}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name43}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name44}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name45}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name46}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name47}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name48}
 								/>
@@ -585,27 +523,27 @@ const Table = () => {
 							<td className="tg-0pky">Espadon</td>
 							<td className="tg-73oq">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name49}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name50}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name51}
 								/>
@@ -613,35 +551,35 @@ const Table = () => {
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name52}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
 									placeholder="enter a number"
-									onChange={(e) => {
+									/*onChange={(e) => {
 										//setInput(e.target.//value);
-									}}
+									}}*/
 									//value={input.name53}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name54}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name55}
 								/>
@@ -651,36 +589,36 @@ const Table = () => {
 							<td className="tg-0pky">Crevette blanche</td>
 							<td className="tg-73oq">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name56}
 								/>
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name57}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name58}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+												//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name59}
 								/>
@@ -726,18 +664,15 @@ const Table = () => {
 							</td>
 							<td className="tg-f8tv">
 								<input
-									onChange={(e) => {
-										//			//setInput(e.target.//value);
-									}}
+									/*	onChange={(e) => {
+												//			//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//		//value={input.name64}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//			//setInput(e.target.//value);
-									}}
 									placeholder="enter a number"
 									////value={input.name65}
 								/>
@@ -753,18 +688,17 @@ const Table = () => {
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//	//setInput(e.target.//value);
-									}}
+									/*	onChange={(e) => {
+												//	//setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//value={input.name67}
 								/>
 							</td>
 							<td className="tg-0pky">
 								<input
-									onChange={(e) => {
-										//	//setInput(e.target.//value);
-									}}
+									/*onChange={(e) => {
+											}}*/
 									placeholder="enter a number"
 									//value={input.name68}
 								/>
@@ -772,8 +706,8 @@ const Table = () => {
 							<td className="tg-0pky">
 								<input
 									/*onChange={(e) => {
-										////setInput(e.target.//value);
-									}}*/
+												////setInput(e.target.//value);
+											}}*/
 									placeholder="enter a number"
 									//	//value={input.name69}
 								/>
@@ -781,7 +715,14 @@ const Table = () => {
 						</tr>
 					</tbody>
 				</table>
-				<button type="submit">Submit form </button>
+				<button
+					onClick={() => {
+						postData();
+					}}
+					type="submit"
+				>
+					Submit form{' '}
+				</button>
 			</form>
 		</div>
 	);
